@@ -1,0 +1,9 @@
+# Optimized requirements for Vercel deployment
+Flask==2.3.3
+Werkzeug==2.3.7
+torch==1.13.1+cpu --extra-index-url https://download.pytorch.org/whl/cpu
+torchvision==0.14.1+cpu --extra-index-url https://download.pytorch.org/whl/cpu
+Pillow==10.0.0
+pandas==2.0.3
+numpy==1.24.3
+gunicorn==21.2.0
