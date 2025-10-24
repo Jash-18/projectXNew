@@ -1,11 +1,6 @@
-# Optimized requirements for Vercel deployment
-Flask==3.0.3
-Werkzeug==3.0.3
-# Use a Torch version that has wheels for Python 3.12 on Linux and fits serverless limits
-# Note: Vercel Python runtime currently uses Python 3.12. Use torch 2.2 CPU (smallest available) and torchvision pinned.
+gradio==4.44.0
 torch==2.2.2
 torchvision==0.17.2
-Pillow==10.3.0
+pillow==10.3.0
 pandas==2.2.2
 numpy==1.26.4
-gunicorn==21.2.0
