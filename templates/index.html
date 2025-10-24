@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% block pagetitle %}
+Plant Disease Detection - AI Prediction
+{% endblock pagetitle %}
+{% block body %}
+
+<div class="container-fluid">
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-8">
+            <div class="card shadow-lg rounded-lg">
+                <div class="card-header text-center" style="background-color: #043e46; color: white;">
+                    <h2>🌿 AI Plant Disease Detection</h2>
+                    <p class="mb-0">Upload an image of a plant leaf to detect diseases</p>
+                </div>
+                <div class="card-body p-5">
+                    <form action="/submit" method="POST" enctype="multipart/form-data">
+                        <div class="mb-4 text-center">
+                            <div class="file-upload">
+                                <input type="file" id="file" name="image" accept="image/*" required>
+                                <label for="file" class="lbl">
+                                    📷 Choose Plant Image
+                                </label>
+                                <span id="file-chosen">No file chosen</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <div class="alert alert-info" role="alert">
+                                <strong>📋 Instructions:</strong>
+                                <ul class="mb-0 mt-2">
+                                    <li>Upload a clear image of a plant leaf</li>
+                                    <li>Ensure good lighting and focus</li>
+                                    <li>Supported formats: JPG, PNG, GIF</li>
+                                    <li>File size should be under 10MB</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-success btn-lg px-5">
+                                🔍 Analyze Plant Disease
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row mt-5">
+        <div class="col-md-12">
+            <div class="text-center">
+                <h3>🌱 Supported Plant Types</h3>
+                <div class="row mt-4">
+                    <div class="col-md-3 mb-3">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <h5>🍎 Fruits</h5>
+                                <p>Apple, Peach, Orange, Grape, Blueberry, Cherry, Strawberry</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <h5>🥬 Vegetables</h5>
+                                <p>Tomato, Potato, Pepper, Squash, Corn</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <h5>🫘 Legumes</h5>
+                                <p>Soybean, Raspberry</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <h5>🤖 AI Detection</h5>
+                                <p>39 disease classes with high accuracy</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+const actualBtn = document.getElementById('file');
+const fileChosen = document.getElementById('file-chosen');
+
+actualBtn.addEventListener('change', function(){
+  fileChosen.textContent = this.files[0] ? this.files[0].name : "No file chosen";
+});
+</script>
+
+{% endblock body %}
